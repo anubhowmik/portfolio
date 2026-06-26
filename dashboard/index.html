@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Anupom Bhowmik</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-ring"></div>
+            <div class="preloader-initials">AB</div>
+        </div>
+        <div class="preloader-text">Loading Dashboard...</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>anupom<span class="logo-bracket">/&gt;</span>
+            </a>
+            
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html#about" class="nav-link">Portfolio</a></li>
+                    <li><a href="#coursework" class="nav-link">Coursework</a></li>
+                    <li><a href="#research" class="nav-link">Research</a></li>
+                    <li><a href="#meetings" class="nav-link">Meetings</a></li>
+                    <li><a href="#analytics" class="nav-link">Analytics</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                    <i id="themeIcon" class="fas fa-moon"></i>
+                </button>
+                <button id="hamburgerBtn" class="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileOverlay" class="mobile-overlay">
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-list">
+                <li><a href="../index.html" class="mobile-nav-link">Portfolio</a></li>
+                <li><a href="#coursework" class="mobile-nav-link">Coursework</a></li>
+                <li><a href="#research" class="mobile-nav-link">Research</a></li>
+                <li><a href="#meetings" class="mobile-nav-link">Meetings</a></li>
+                <li><a href="#analytics" class="mobile-nav-link">Analytics</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+        <!-- Dashboard Header -->
+        <div class="dashboard-header">
+            <div class="container">
+                <div class="header-content">
+                    <div>
+                        <h1>Academic Dashboard</h1>
+                        <p class="header-subtitle">Track your academic progress and achievements</p>
+                    </div>
+                    <div class="header-stats">
+                        <div class="stat-badge">
+                            <i class="fas fa-book"></i>
+                            <span id="courseStat">12</span> Courses
+                        </div>
+                        <div class="stat-badge">
+                            <i class="fas fa-flask"></i>
+                            <span id="pubStat">5</span> Publications
+                        </div>
+                        <div class="stat-badge">
+                            <i class="fas fa-star"></i>
+                            <span id="gpaStat">3.85</span> GPA
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coursework Section -->
+        <section id="coursework" class="section dashboard-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">📚 Academics</span>
+                    <h2 class="section-title">Coursework</h2>
+                    <p class="section-subtitle">Courses taken and in progress</p>
+                </div>
+
+                <div class="coursework-controls">
+                    <div class="filter-tabs">
+                        <button class="tab-btn active" data-filter="all">All Courses</button>
+                        <button class="tab-btn" data-filter="completed">Completed</button>
+                        <button class="tab-btn" data-filter="ongoing">Ongoing</button>
+                    </div>
+                    <button class="btn btn-primary btn-sm" id="addCourseBtn">
+                        <i class="fas fa-plus"></i> Add Course
+                    </button>
+                </div>
+
+                <div id="coursesList" class="courses-grid">
+                    <!-- Courses will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="section dashboard-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">🔬 Research</span>
+                    <h2 class="section-title">Research Milestones</h2>
+                    <p class="section-subtitle">Track research progress and publications</p>
+                </div>
+
+                <div class="research-controls">
+                    <button class="btn btn-primary btn-sm" id="addResearchBtn">
+                        <i class="fas fa-plus"></i> Add Milestone
+                    </button>
+                </div>
+
+                <div id="researchList" class="research-timeline">
+                    <!-- Research milestones will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Advisor Meetings Section -->
+        <section id="meetings" class="section dashboard-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">👤 Meetings</span>
+                    <h2 class="section-title">Advisor Meetings</h2>
+                    <p class="section-subtitle">Schedule and track advisor meetings</p>
+                </div>
+
+                <div class="meetings-grid">
+                    <div class="upcoming-meetings">
+                        <h3>Upcoming Meetings</h3>
+                        <div id="upcomingMeetings" class="meetings-list">
+                            <!-- Upcoming meetings will be loaded here -->
+                        </div>
+                        <button class="btn btn-primary btn-sm" id="addMeetingBtn" style="width: 100%;">
+                            <i class="fas fa-plus"></i> Schedule Meeting
+                        </button>
+                    </div>
+                    <div class="past-meetings">
+                        <h3>Past Meetings</h3>
+                        <div id="pastMeetings" class="meetings-list">
+                            <!-- Past meetings will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analytics Section -->
+        <section id="analytics" class="section dashboard-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">📊 Analytics</span>
+                    <h2 class="section-title">Academic Analytics</h2>
+                    <p class="section-subtitle">Visualize your academic performance</p>
+                </div>
+
+                <div class="analytics-grid">
+                    <!-- GPA Trend Chart -->
+                    <div class="analytics-card">
+                        <h3>GPA Trend</h3>
+                        <div id="gpaChart" class="chart-container">
+                            <canvas id="gpaTrendChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Grade Distribution -->
+                    <div class="analytics-card">
+                        <h3>Grade Distribution</h3>
+                        <div id="gradeChart" class="chart-container">
+                            <canvas id="gradeDistChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Semester Comparison -->
+                    <div class="analytics-card">
+                        <h3>Semester Comparison</h3>
+                        <div id="semesterChart" class="chart-container">
+                            <canvas id="semesterCompChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Course Performance -->
+                    <div class="analytics-card">
+                        <h3>Course Performance</h3>
+                        <div id="courseChart" class="chart-container">
+                            <canvas id="coursePerformChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics Summary -->
+                <div class="stats-summary">
+                    <div class="stat-item">
+                        <div class="stat-label">Current GPA</div>
+                        <div class="stat-value" id="currentGPA">3.85</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Total Credits</div>
+                        <div class="stat-value" id="totalCredits">120</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Publications</div>
+                        <div class="stat-value" id="totalPublications">5</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Research Hours</div>
+                        <div class="stat-value" id="researchHours">450+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <!-- Add Course Modal -->
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Course</h3>
+                <button class="modal-close" data-modal="courseModal">&times;</button>
+            </div>
+            <form id="courseForm" class="modal-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="courseName" class="form-label">Course Name <span class="required">*</span></label>
+                        <input type="text" id="courseName" name="courseName" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="courseCode" class="form-label">Course Code <span class="required">*</span></label>
+                        <input type="text" id="courseCode" name="courseCode" class="form-input" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="courseSemester" class="form-label">Semester <span class="required">*</span></label>
+                        <select id="courseSemester" name="courseSemester" class="form-input" required>
+                            <option value="">Select Semester</option>
+                            <option value="Spring 2024">Spring 2024</option>
+                            <option value="Summer 2024">Summer 2024</option>
+                            <option value="Fall 2024">Fall 2024</option>
+                            <option value="Spring 2025">Spring 2025</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="courseGrade" class="form-label">Grade</label>
+                        <input type="text" id="courseGrade" name="courseGrade" class="form-input" placeholder="A+, A, B+...">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="courseStatus" class="form-label">Status <span class="required">*</span></label>
+                        <select id="courseStatus" name="courseStatus" class="form-input" required>
+                            <option value="ongoing">Ongoing</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="courseCredits" class="form-label">Credits</label>
+                        <input type="number" id="courseCredits" name="courseCredits" class="form-input" min="1" max="6">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" data-modal="courseModal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Course</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Research Modal -->
+    <div id="researchModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Research Milestone</h3>
+                <button class="modal-close" data-modal="researchModal">&times;</button>
+            </div>
+            <form id="researchForm" class="modal-form">
+                <div class="form-group">
+                    <label for="researchTitle" class="form-label">Title <span class="required">*</span></label>
+                    <input type="text" id="researchTitle" name="researchTitle" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="researchDate" class="form-label">Date <span class="required">*</span></label>
+                    <input type="date" id="researchDate" name="researchDate" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="researchDescription" class="form-label">Description</label>
+                    <textarea id="researchDescription" name="researchDescription" class="form-input form-textarea" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="researchType" class="form-label">Type <span class="required">*</span></label>
+                    <select id="researchType" name="researchType" class="form-input" required>
+                        <option value="">Select Type</option>
+                        <option value="publication">Publication</option>
+                        <option value="milestone">Milestone</option>
+                        <option value="experiment">Experiment</option>
+                        <option value="presentation">Presentation</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" data-modal="researchModal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Milestone</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Meeting Modal -->
+    <div id="meetingModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Schedule Meeting</h3>
+                <button class="modal-close" data-modal="meetingModal">&times;</button>
+            </div>
+            <form id="meetingForm" class="modal-form">
+                <div class="form-group">
+                    <label for="meetingAdvisor" class="form-label">Advisor Name <span class="required">*</span></label>
+                    <input type="text" id="meetingAdvisor" name="meetingAdvisor" class="form-input" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="meetingDate" class="form-label">Date <span class="required">*</span></label>
+                        <input type="date" id="meetingDate" name="meetingDate" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="meetingTime" class="form-label">Time <span class="required">*</span></label>
+                        <input type="time" id="meetingTime" name="meetingTime" class="form-input" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="meetingLocation" class="form-label">Location</label>
+                    <input type="text" id="meetingLocation" name="meetingLocation" class="form-input" placeholder="Office or Zoom URL">
+                </div>
+                <div class="form-group">
+                    <label for="meetingTopic" class="form-label">Topic</label>
+                    <textarea id="meetingTopic" name="meetingTopic" class="form-input form-textarea" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" data-modal="meetingModal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Schedule</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; <span id="footerYear">2024</span> Anupom Bhowmik. All rights reserved.</p>
+                <p>Made with <i class="fas fa-heart"></i> for academics and research</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="scroll-top-btn" hidden aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
