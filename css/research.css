@@ -1,0 +1,241 @@
+/* ===== RESEARCH SECTION ===== */
+
+.research-section {
+  background: linear-gradient(180deg, var(--clr-bg-secondary) 0%, var(--clr-bg-primary) 100%);
+}
+
+/* ===== PUBLICATIONS LIST ===== */
+.publications-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2xl);
+  margin-bottom: var(--sp-3xl);
+}
+
+/* ===== PUBLICATION CARD ===== */
+.pub-card {
+  background-color: var(--clr-bg-secondary);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-xl);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--sp-xl);
+  transition: all var(--transition-base);
+}
+
+.pub-card:hover {
+  border-color: var(--clr-primary);
+  box-shadow: var(--shadow-lg);
+  transform: translateX(8px);
+}
+
+/* ===== PUB LEFT ===== */
+.pub-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-md);
+  min-width: 120px;
+}
+
+.pub-badge {
+  display: inline-block;
+  padding: var(--sp-xs) var(--sp-md);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+.pub-conference {
+  background-color: var(--clr-primary);
+}
+
+.pub-journal {
+  background-color: var(--clr-success);
+}
+
+.pub-workshop {
+  background-color: var(--clr-warning);
+}
+
+.pub-year {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--clr-text-primary);
+}
+
+/* ===== PUB CONTENT ===== */
+.pub-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+}
+
+.pub-title {
+  font-size: var(--font-size-lg);
+  color: var(--clr-text-primary);
+  margin: 0;
+  line-height: var(--line-height-normal);
+}
+
+.pub-authors {
+  font-size: var(--font-size-sm);
+  color: var(--clr-text-secondary);
+  margin: 0;
+  line-height: var(--line-height-normal);
+}
+
+.pub-authors strong {
+  color: var(--clr-text-primary);
+}
+
+.pub-venue {
+  font-size: var(--font-size-sm);
+  color: var(--clr-text-secondary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+}
+
+.pub-venue i {
+  color: var(--clr-primary);
+}
+
+.pub-venue em {
+  color: var(--clr-accent);
+}
+
+/* ===== PUB METRICS ===== */
+.pub-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-md);
+  padding: var(--sp-md) 0;
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.pub-metrics span {
+  font-size: var(--font-size-sm);
+  color: var(--clr-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+}
+
+.pub-metrics i {
+  color: var(--clr-primary);
+}
+
+/* ===== PUB ACTIONS ===== */
+.pub-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-md);
+}
+
+.btn-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--clr-primary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  padding: var(--sp-xs) 0;
+  border-bottom: 2px solid transparent;
+}
+
+.btn-text-link:hover {
+  color: var(--clr-primary-dark);
+  border-bottom-color: var(--clr-primary);
+}
+
+.btn-text-link i {
+  font-size: var(--font-size-base);
+}
+
+/* ===== RESEARCH CTA ===== */
+.research-cta {
+  text-align: center;
+  padding-top: var(--sp-xl);
+  border-top: 2px solid var(--clr-border);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .pub-card {
+    grid-template-columns: 1fr;
+    gap: var(--sp-lg);
+  }
+
+  .pub-left {
+    flex-direction: row;
+    gap: var(--sp-lg);
+    min-width: auto;
+    align-items: center;
+  }
+
+  .pub-badge,
+  .pub-year {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .pub-card {
+    padding: var(--sp-lg);
+    gap: var(--sp-md);
+  }
+
+  .pub-card:hover {
+    transform: translateX(4px);
+  }
+
+  .pub-left {
+    flex-direction: row;
+    gap: var(--sp-md);
+  }
+
+  .pub-badge {
+    flex: 1;
+  }
+
+  .pub-year {
+    flex: auto;
+  }
+
+  .pub-title {
+    font-size: var(--font-size-base);
+  }
+
+  .pub-authors,
+  .pub-venue {
+    font-size: var(--font-size-xs);
+  }
+
+  .pub-metrics {
+    padding: var(--sp-md) 0;
+    gap: var(--sp-sm);
+  }
+
+  .pub-metrics span {
+    font-size: var(--font-size-xs);
+  }
+
+  .pub-actions {
+    gap: var(--sp-sm);
+  }
+
+  .btn-text-link {
+    font-size: var(--font-size-xs);
+  }
+}
