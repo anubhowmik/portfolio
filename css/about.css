@@ -1,0 +1,213 @@
+/* ===== ABOUT SECTION ===== */
+
+.about-section {
+  background: linear-gradient(180deg, var(--clr-bg-primary) 0%, var(--clr-bg-secondary) 100%);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-3xl);
+}
+
+/* ===== ABOUT BIO CARD ===== */
+.about-bio-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-bio-card p {
+  margin-bottom: var(--sp-lg);
+  line-height: var(--line-height-relaxed);
+}
+
+/* ===== ABOUT INFO LIST ===== */
+.about-info-list {
+  margin: var(--sp-2xl) 0;
+  gap: var(--sp-lg);
+  display: flex;
+  flex-direction: column;
+}
+
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-md);
+  padding-bottom: var(--sp-lg);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.info-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.info-row i {
+  color: var(--clr-primary);
+  font-size: var(--font-size-lg);
+  margin-top: var(--sp-xs);
+  flex-shrink: 0;
+}
+
+.info-row span {
+  color: var(--clr-text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+.info-row strong {
+  display: block;
+  color: var(--clr-text-primary);
+  margin-bottom: var(--sp-xs);
+}
+
+/* ===== ABOUT CTA ROW ===== */
+.about-cta-row {
+  display: flex;
+  gap: var(--sp-md);
+  margin-top: auto;
+  padding-top: var(--sp-xl);
+  flex-wrap: wrap;
+}
+
+/* ===== ABOUT TIMELINE CARD ===== */
+.about-timeline-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== TIMELINE ===== */
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--sp-lg);
+  margin-bottom: var(--sp-2xl);
+  position: relative;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-item:last-child .tl-marker::after {
+  display: none;
+}
+
+/* ===== TIMELINE MARKER ===== */
+.tl-marker {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: var(--clr-primary);
+  border: 3px solid var(--clr-bg-primary);
+  border-radius: 50%;
+  margin-top: var(--sp-md);
+  flex-shrink: 0;
+}
+
+html[data-theme="dark"] .tl-marker {
+  border-color: var(--clr-dark-bg-secondary);
+}
+
+.tl-marker::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: calc(var(--sp-2xl) + 32px);
+  background-color: var(--clr-border);
+}
+
+/* ===== TIMELINE CONTENT ===== */
+.tl-content {
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-lg) var(--sp-xl);
+  background-color: var(--clr-bg-secondary);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-base);
+}
+
+.tl-content:hover {
+  border-color: var(--clr-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateX(10px);
+}
+
+.tl-date {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--clr-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--sp-sm);
+}
+
+.tl-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--clr-text-primary);
+  margin-bottom: var(--sp-sm);
+}
+
+.tl-sub {
+  font-size: var(--font-size-base);
+  color: var(--clr-accent);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--sp-xs);
+}
+
+.tl-desc {
+  font-size: var(--font-size-sm);
+  color: var(--clr-text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-2xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-info-list {
+    margin: var(--sp-xl) 0;
+  }
+
+  .info-row {
+    gap: var(--sp-md);
+    padding-bottom: var(--sp-md);
+    margin-bottom: var(--sp-md);
+  }
+
+  .about-cta-row {
+    flex-direction: column;
+  }
+
+  .about-cta-row .btn {
+    width: 100%;
+  }
+
+  .tl-content {
+    padding: var(--sp-md) var(--sp-lg);
+  }
+
+  .tl-content:hover {
+    transform: translateX(5px);
+  }
+
+  .tl-title {
+    font-size: var(--font-size-base);
+  }
+}
