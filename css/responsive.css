@@ -1,0 +1,266 @@
+/* ===== RESPONSIVE & MOBILE ADJUSTMENTS ===== */
+
+/* ===== TABLET (640px - 1024px) ===== */
+@media (max-width: 1024px) {
+  :root {
+    --font-size-5xl: 2.25rem;
+    --font-size-4xl: 1.875rem;
+    --font-size-3xl: 1.5rem;
+    --sp-3xl: 3rem;
+  }
+
+  .container {
+    padding: 0 var(--sp-lg);
+  }
+
+  h1 { font-size: var(--font-size-4xl); }
+  h2 { font-size: var(--font-size-3xl); }
+}
+
+/* ===== MOBILE (< 640px) ===== */
+@media (max-width: 768px) {
+  :root {
+    --font-size-5xl: 1.875rem;
+    --font-size-4xl: 1.5rem;
+    --font-size-3xl: 1.25rem;
+    --font-size-2xl: 1.125rem;
+    --sp-3xl: 2.5rem;
+    --sp-2xl: 2rem;
+  }
+
+  html {
+    font-size: 15px;
+  }
+
+  body {
+    font-size: var(--font-size-sm);
+  }
+
+  .container {
+    padding: 0 var(--sp-md);
+  }
+
+  h1 { font-size: var(--font-size-4xl); }
+  h2 { font-size: var(--font-size-3xl); }
+  h3 { font-size: var(--font-size-2xl); }
+  h4 { font-size: var(--font-size-xl); }
+
+  .section {
+    padding: var(--sp-2xl) 0;
+  }
+
+  .section-header {
+    margin-bottom: var(--sp-2xl);
+  }
+
+  .section-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .section-subtitle {
+    font-size: var(--font-size-base);
+  }
+
+  /* Form adjustments for mobile to prevent zoom */
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+    border-radius: var(--radius-md);
+  }
+
+  .btn {
+    padding: var(--sp-sm) var(--sp-lg);
+    font-size: var(--font-size-sm);
+  }
+
+  .card {
+    padding: var(--sp-lg);
+  }
+}
+
+/* ===== SMALL MOBILE (< 480px) ===== */
+@media (max-width: 480px) {
+  :root {
+    --sp-3xl: 2rem;
+    --sp-2xl: 1.5rem;
+  }
+
+  .section {
+    padding: var(--sp-xl) 0;
+  }
+
+  .section-header {
+    margin-bottom: var(--sp-xl);
+  }
+
+  .section-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  h1 { font-size: var(--font-size-3xl); }
+  h2 { font-size: var(--font-size-2xl); }
+  h3 { font-size: var(--font-size-xl); }
+
+  .card {
+    padding: var(--sp-md);
+  }
+
+  .btn {
+    padding: var(--sp-sm) var(--sp-md);
+    font-size: var(--font-size-xs);
+  }
+
+  .btn-lg {
+    padding: var(--sp-md) var(--sp-lg);
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* ===== LANDSCAPE MODE ===== */
+@media (max-height: 600px) {
+  .hero-section {
+    min-height: auto;
+    padding: 120px 0 var(--sp-2xl);
+  }
+
+  .hero-scroll-down {
+    display: none;
+  }
+}
+
+/* ===== HIGH DPI SCREENS ===== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Thinner borders on high-DPI screens */
+  .card,
+  .project-card,
+  .pub-card {
+    border-width: 0.5px;
+  }
+}
+
+/* ===== TOUCH DEVICE OPTIMIZATIONS ===== */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase touch targets */
+  .btn,
+  .nav-link,
+  .icon-link,
+  .filter-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Remove hover effects that don't work on touch */
+  .card:hover,
+  .project-card:hover,
+  .pub-card:hover {
+    transform: none;
+  }
+
+  .btn:active:not(:disabled) {
+    opacity: 0.8;
+    transform: scale(0.98);
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  @keyframes spin {
+    to { transform: none; }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: none; }
+    50% { transform: none; }
+  }
+
+  @keyframes blink {
+    0%, 49%, 100% { opacity: 1; }
+    50%, 99% { opacity: 1; }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { transform: none; opacity: 0.8; }
+    50% { transform: none; opacity: 0.4; }
+  }
+
+  @keyframes orbit {
+    from { transform: none; }
+    to { transform: none; }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+/* ===== DARK MODE ON PREFERENCE ===== */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    color-scheme: dark;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html:not([data-theme]) {
+    color-scheme: light;
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .nav-actions,
+  .hamburger-btn,
+  .scroll-top-btn,
+  .hero-scroll-down,
+  .projects-load-more,
+  .research-cta,
+  .contact-form,
+  #navbar {
+    display: none !important;
+  }
+
+  .section {
+    page-break-inside: avoid;
+  }
+
+  .card,
+  .project-card,
+  .pub-card {
+    page-break-inside: avoid;
+  }
+}
+
+/* ===== ACCESSIBLE FOCUS STYLES ===== */
+@media (prefers-reduced-motion: no-preference) {
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid var(--clr-primary);
+    outline-offset: 2px;
+  }
+}
